@@ -6,8 +6,8 @@
 </description>
     <link>http://javieraparisi.github.io/</link>
     <atom:link href="http://javieraparisi.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Apr 2016 22:06:21 +0200</pubDate>
-    <lastBuildDate>Thu, 14 Apr 2016 22:06:21 +0200</lastBuildDate>
+    <pubDate>Tue, 26 Apr 2016 22:35:00 +0200</pubDate>
+    <lastBuildDate>Tue, 26 Apr 2016 22:35:00 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -35,12 +35,22 @@
       </item>
     
       <item>
-        <title>Gestionando metodos async y errores con promesas</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Arquitecturas spa con promesas</title>
+        <description>&lt;p&gt;Las promesas tienen una relevancia de diseño de arquitectura, de echo una arquitectura SPA con 
+mudulos y templates compartidos donde todo se gestiona asincrono es imprescindible, sus principales caracteristicas son:&lt;br /&gt;&lt;br /&gt;
+1.Paralelización de tareas (carga asincrona y controlada de templates, servicios, componentes, etc).&lt;br /&gt;
+2.Sincronización de tareas (podemos subscribirnos al final de una promesa, ya sea desarrollo nuestro o externo).&lt;br /&gt;
+3.Gestion de errores (podemos manejar errores en callbacks, rechazar promesas por n motivos).&lt;br /&gt;
+4.Estado del ciclo de vida de la pantalla (podemos manejar distintos motivos de rechazo).&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;Partiendo de Promise (ES6) podemos trabajar con promesas sin ningun problema, aunque la falta mucho metodo complementario, pruebas
+de rendimiento y ademas solo funciona con navegadores ES6, tenemos otras alternativas desde ES5 como 
+&lt;a href=&quot;https://github.com/kriskowal/q&quot;&gt;Q.js &lt;/a&gt;, &lt;a href=&quot;https://github.com/cujojs/when&quot;&gt;When.js &lt;/a&gt;, 
+&lt;a href=&quot;http://bluebirdjs.com/docs/getting-started.html&quot;&gt;Bluebird.js &lt;/a&gt;, etc …&lt;br /&gt;&lt;br /&gt;
+Para elegir la mejor opción podemos mirar el &lt;a href=&quot;https://promisesaplus.com/implementations&quot;&gt;catalogo de implementaciones promise A+&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;Todo codigo js tiene que tener control de errores, asi que todo js ya sea sincrono o asincrono debe estar englobado en 
+en el ambito del framework de promesa por si falla poder controlar el rechazo.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;

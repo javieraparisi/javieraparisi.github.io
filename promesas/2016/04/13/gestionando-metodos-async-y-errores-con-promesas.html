@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Gestionando metodos async y errores con promesas</title>
+    <title>Arquitecturas spa con promesas</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
@@ -60,14 +60,24 @@
       <div class="container">
          <div class="post">
   
-  <h1 class="postTitle">Gestionando metodos async y errores con promesas</h1>
-  <p class="meta">April 13, 2016 | <span class="time">0</span> Minute Read</p>
+  <h1 class="postTitle">Arquitecturas spa con promesas</h1>
+  <p class="meta">April 13, 2016 | <span class="time">1</span> Minute Read</p>
   
-  <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+  <p>Las promesas tienen una relevancia de diseño de arquitectura, de echo una arquitectura SPA con 
+mudulos y templates compartidos donde todo se gestiona asincrono es imprescindible, sus principales caracteristicas son:<br /><br />
+1.Paralelización de tareas (carga asincrona y controlada de templates, servicios, componentes, etc).<br />
+2.Sincronización de tareas (podemos subscribirnos al final de una promesa, ya sea desarrollo nuestro o externo).<br />
+3.Gestion de errores (podemos manejar errores en callbacks, rechazar promesas por n motivos).<br />
+4.Estado del ciclo de vida de la pantalla (podemos manejar distintos motivos de rechazo).<br /></p>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>Partiendo de Promise (ES6) podemos trabajar con promesas sin ningun problema, aunque la falta mucho metodo complementario, pruebas
+de rendimiento y ademas solo funciona con navegadores ES6, tenemos otras alternativas desde ES5 como 
+<a href="https://github.com/kriskowal/q">Q.js </a>, <a href="https://github.com/cujojs/when">When.js </a>, 
+<a href="http://bluebirdjs.com/docs/getting-started.html">Bluebird.js </a>, etc …<br /><br />
+Para elegir la mejor opción podemos mirar el <a href="https://promisesaplus.com/implementations">catalogo de implementaciones promise A+</a></p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>Todo codigo js tiene que tener control de errores, asi que todo js ya sea sincrono o asincrono debe estar englobado en 
+en el ambito del framework de promesa por si falla poder controlar el rechazo.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">print_hi</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
   <span class="kd">var</span> <span class="nx">t</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
